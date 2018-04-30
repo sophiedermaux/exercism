@@ -1,7 +1,13 @@
   def hamming(str1, str2)
-    p string1 = str1.downcase.split('')
-    p string2 = str2.downcase.split('')
-    str1.each_index { |idx| puts string1.values_at(idx) }
+    string1 = str1.downcase.split('')
+    string2 = str2.downcase.split('')
+    hamming_count = 0
+
+    string1.each_index do |idx|
+      hamming_count += 1 if string1.values_at(idx) != string2.values_at(idx)
+    end
+     hamming_count
   end
-  hamming('GAGCCTACTAACGGGAT','CATCGTAATGACGGCCT')
+
+  p hamming('GAGCCTACTAACGGGAT','CATCGTAATGACGGCCT')
   # find out difference of 7
